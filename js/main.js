@@ -53,7 +53,7 @@ function selectLocation(location) {
     toggleDropdown();
 
     document.getElementById("selected-location").innerHTML = `
-        <img class="icon" src="images/location.svg"/> 
+        <img class="icon" src="../images/location.svg"/> 
         ${location}
     `;
 
