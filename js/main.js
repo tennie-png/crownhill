@@ -1,3 +1,13 @@
+(function() {
+    const isGitHub = window.location.hostname.includes("github.io");
+    if (isGitHub) {
+      const repoName = window.location.pathname.split("/")[1];
+      document.write(`<base href="/${repoName}/">`);
+    } else {
+      document.write(`<base href="/">`);
+    }
+  })();
+
 document.addEventListener('DOMContentLoaded', function () {
     var secondaryNavbar = document.querySelector('.secondary-navbar');
     var navbar = document.querySelector('.navbar');
@@ -40,15 +50,7 @@ function toggleDropdown() {
 }
 
 function getLocationIconPath() {
-    const pathDepth = window.location.pathname.split("/").length - 1;
-    let prefix = "";
-
-    // Adjust path prefix based on how deep you are in folders
-    for (let i = 1; i < pathDepth; i++) {
-        prefix += "../";
-    }
-
-    return `${prefix}images/location.svg`;
+    return "images/location.svg";
 }
 
 // Save selected location and update
