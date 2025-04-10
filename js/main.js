@@ -85,7 +85,6 @@ function updateButton(location) {
     } else if (location === '650 Green Island Road, American Canyon, CA 94503') {
         button.innerHTML = `<img src="images/call.svg" class="call">707-642-6162`;
     }
-    toggleDropdown();
 }
 
 // Close dropdown when clicking outside
