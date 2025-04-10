@@ -8,6 +8,16 @@
     }
   })();
 
+  (function() {
+    const base = window.location.hostname.includes("github.io") ? "/crownhill/" : "/";
+    
+    // Set the href for the logo link dynamically
+    const logoLink = document.getElementById('logo-link');
+    if (logoLink) {
+      logoLink.setAttribute('href', base + 'index.html');
+    }
+  })();
+
 document.addEventListener('DOMContentLoaded', function () {
     var secondaryNavbar = document.querySelector('.secondary-navbar');
     var navbar = document.querySelector('.navbar');
