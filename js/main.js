@@ -39,6 +39,18 @@ function toggleDropdown() {
     arrow.classList.toggle("rotate");
 }
 
+function getLocationIconPath() {
+    const pathDepth = window.location.pathname.split("/").length - 1;
+    let prefix = "";
+
+    // Adjust path prefix based on how deep you are in folders
+    for (let i = 1; i < pathDepth; i++) {
+        prefix += "../";
+    }
+
+    return `${prefix}images/location.svg`;
+}
+
 function selectLocation(location) {
     document.getElementById("selected-location").innerHTML = `
         <img class="icon" src="../images/location.svg"/> 
