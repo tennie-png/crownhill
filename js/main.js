@@ -51,27 +51,17 @@ function getLocationIconPath() {
     return `${prefix}images/location.svg`;
 }
 
-function selectLocation(location) {
-    document.getElementById("selected-location").innerHTML = `
-        <img class="icon" src="../images/location.svg"/> 
-        ${location}
-    `;
-    toggleDropdown();
-}
-
 // Save selected location and update
 function selectLocation(location) {
     localStorage.setItem('selectedLocation', location);
     toggleDropdown();
 
     document.getElementById("selected-location").innerHTML = `
-        <img class="icon" src="../images/location.svg"/> 
+        <img class="icon" src="${getLocationIconPath()}"/> 
         ${location}
     `;
 
-    // Update
     updateButton(location);
-    toggleDropdown();
 }
 
 // Load saved location
@@ -79,7 +69,7 @@ function loadSelectedLocation() {
     const savedLocation = localStorage.getItem('selectedLocation');
     if (savedLocation) {
         document.getElementById("selected-location").innerHTML = `
-            <img class="icon" src="../images/location.svg"/> 
+            <img class="icon" src="${getLocationIconPath()}"/> 
             ${savedLocation}
         `;
         updateButton(savedLocation);
